@@ -1,0 +1,43 @@
+1.
+    Adjacent Sibling:
+    h2 + p {
+        color: red;         
+    }
+
+    the adjacent sibling selector simply is defined like this.
+    Here we set a red color
+    it assigns it to all paragraphs that directly follow a h2 tag, which is why the first and last paragraph gets the red color
+    {{and the second one does not because the second one follows a h3 tag which is in between a h2 tag adnd the paragraph therefore is not a direct sibling of the h2 tag.
+    The plus sign requires a direct sibiling}}
+
+    1)Elements have to share the same parent
+    2)The second element comes immediately after first element
+
+2.
+    General Sibling
+    h2 ~ p{
+        color:red;
+    }
+
+    all paragraphs get red color, even though the second one doesn't directly follow a h2 tag.
+    {{ for the General sibling, it's only important that there is a h2 sibiling, does not have to be directly in front of it, just a h2 element on the same level as the paragraph in this case}}
+
+    1)Have to have the same parent
+    2)the second elements comes after the first one but does not have to come directly after it
+
+3.
+    Child combinator
+    div > p{
+        color: red;
+    }
+
+    this child combinator says any paragraph that is direct child of a div should get the style.
+
+4.
+    desendant combinator
+    div p {
+        color:red;
+    }
+    here it only matters there is a div somewhere above p in the DOM
+    does not have to be direct parent
+

@@ -1,0 +1,38 @@
+#product-overview{
+    background: #ff1b68;
+}
+
+h1{
+    color: white;
+    font-family: 'Sriracha', cursive;
+}
+
+.section-title{
+    color: #2ddf5c;
+}
+
+#product-overview h1{ /*There could be elements in between, so we could have wrapping div. that would still work*/
+    color:white;
+    font-family: 'Anton','sans-serif';
+}
+/*  
+    class will overwrite the tag element in any order.
+    order matters only when applying the same tag
+    
+    {{for the same tag or same level of specificiaty, the one write at the bottom will overwrite the one writen on top}}
+
+    inline style have the highest priority
+    then is class.
+
+    (The priority can be seen in the developer tool, listed in order, top one has highest priority(which is inline style))
+
+    <tag> selector has lowest priority,
+    then would be class
+    then would be ID selector
+    highest would be inline style
+
+
+
+
+    
+*/

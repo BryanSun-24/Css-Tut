@@ -1,0 +1,29 @@
+body {
+    font-family: sans-serif;
+    color:blue
+}
+
+#assignment-instructions{
+    font-family: sans-serif;
+    background-color: aqua;
+}
+
+.second-line-green code{
+    color:green;
+}
+
+code {
+    font-family: monospace;
+    color:red;
+}/* directly selector beats the inheritence*/
+
+
+li + li{ /* for every list of items but first one*/
+    background: black;
+    color:white;
+}
+
+ol > li {
+    background: black;
+    color:white;
+}
