@@ -1,23 +1,39 @@
 body{
     font-family:'Montserrat', sans-serif;
     margin: 0;
+    width: 100%; /*Therefore width is set 100% by default, would not make changes */
 }
 
 #product-overview{
     background: #ff1b68;
+    /*
     padding: 20px;
     border-style: solid;
     border-color: black;
     border-width: 5px;
     margin: 20px;
+    */
+    /*When we set up width:100% with these properties defined above, we would see that it shifted a little bit to the right, the 100% width leads to our red element to go out of the right side of our page
+    This happens because all elements by default happen to have a certain way of calculating width and height which is called content box*/
+
+
+    width: 100%;
+    /*we would not see a change because that was its default behaviour of block elements such as div, h1. And this is html default feature
+    block level elements unlike inline elements like anchor tags for example, block level elements always take the full available width by default*/
+    
+
+    height:100%;
+    /*100% for height refers to the available height given by the parent container*/
     /*border: 5px black solid; (This is called a shorthand)*/
 }
 
+/*
 h1{
     color: white;
     font-family: 'Sriracha', cursive;
 }
-
+*/
+ 
 .section-title{
     color: #2ddf5c;
 }
