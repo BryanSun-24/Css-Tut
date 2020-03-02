@@ -1,21 +1,35 @@
+*{ /*If you want to reset all elements to have a certain behavior, like using box sizing border*/
+    box-sizing: border-box;
+} /* It really targeting every element on its own, hence overwritting inheritance and also overwritting browser defaults and sets the box-sizing to border box*/
+
+
+
 body{
     font-family:'Montserrat', sans-serif;
     margin: 0;
     width: 100%; /*Therefore width is set 100% by default, would not make changes */
+    /*box-sizing: border-box;   
+    it would not work for section to !!!(taking inheritance)!!!!, border-box, from body, because the browser sets its own box-sizing because section is a block element
+    这里 section想接受body的遗传不管用， 因为browser 会设置default box-sizing which section part 不会接收到。 所以一种解决方法就是用 universal selector 去设置global box-sizing*/
 }
 
 #product-overview{
     background: #ff1b68;
-    /*
+
     padding: 20px;
     border-style: solid;
     border-color: black;
     border-width: 5px;
-    margin: 20px;
-    */
+    /*margin: 20px;*/
     /*When we set up width:100% with these properties defined above, we would see that it shifted a little bit to the right, the 100% width leads to our red element to go out of the right side of our page
-    This happens because all elements by default happen to have a certain way of calculating width and height which is called content box*/
+    This happens because all elements by default happen to have a certain way of calculating width and height which is called content box
+    And right here padding, and border are not included into our calculation or is not part of what width and height target
+    {{Where we can set this behaviour by adding the box-sizing property}}*/
 
+    /*#############*/
+    /*box-sizing: content-box; // This means if we set a width and height, we set width and height of the content, not of the entire box*/
+    box-sizing: border-box; /* Now width and height include padding and border, ((they dont include margin and we cant make it include that)) 永远不包括 margin！！！。*/ 
+    /*#############*/
 
     width: 100%;
     /*we would not see a change because that was its default behaviour of block elements such as div, h1. And this is html default feature
