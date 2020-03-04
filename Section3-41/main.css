@@ -1,0 +1,93 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+}
+
+#product-overview {
+    background: #ff1b68;
+    width: 100%;
+    height: 528px;
+    padding: 10px;   
+}
+
+.section-title {
+    color: #2ddf5c;
+}
+
+#product-overview h1 {
+    color: white;
+    font-family: 'Anton', sans-serif;
+}
+
+/* h1 {
+    font-family: sans-serif;
+} */
+
+.main-header {
+    width: 100%;
+    background: #2ddf5c;
+    padding: 8px 16px;
+}
+
+.main-header > div {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.main-header__brand {
+    color: #0e4f1f;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.main-nav {
+    display: inline-block;
+    text-align: right;
+    width: calc(100% - 74px);
+    vertical-align: middle;
+}
+
+.main-nav__items {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.main-nav__item {
+    display: inline-block;
+    margin: 0 16px; /* first value is top and bottom, second value is left and right*/ /*margin is not included in width calculation*/
+    text-decoration: none;
+}
+
+.main-nav_item a{
+    text-decoration: none;
+    color: #0e4f1f
+}
+
+
+
+/*These hover, active is pseudo class*/
+.main-nav__item a:hover {/*Mouse on button*/
+    color: white;
+}
+.main-nav__item a:active { /*Click*/
+    color:white
+}
+
+/* Pseudo classes  define a style or allow us to define a style for a special state of an element, like the hover or active state.
+Pseudo elements allow us to define a style of a specific part of an element.*/
+
+/* Pseudo classes are defined with a single colon and then the class name like hover or active and 
+pseudo elements are defined by adding  two colons and then the element name !!!!!! We can found a list of available pseudo classes on MDN*/
+
+/* pseudo example
+p::first-letter{
+    color:red;
+    font-size: 20px;
+}
+*/
