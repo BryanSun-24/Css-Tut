@@ -14,19 +14,20 @@
 <body>
     <header class="main-header">
         <div>
-            <a href="index.html">
+            <a href="index.html" class="main-header__brand">
                 uHost
             </a>
-        </div>
-        <nav>
-            <ul>
-                <li>
+        </div><!-- in html this empty space between </div> and <nav> also take up a little bit pixol, so when we are doing substract methods to fit the width of inline elements, we normally need to minus more than showing in the developer tool the width-->
+        <nav class="main-nav">
+            <ul class="main-nav__items">
+                <li class="main-nav__item">
                     <a href="packages/index.html">Packages</a>
                 </li>
-                <li<>
+                <li class="main-nav__item">
                     <a href="customers/index.html">Customers</a>
+                    <a href="customers/index.html" style="display: block;">Customers</a> <!-- by doing this style, we can see the second customer jumped into a new row because second cusotmer turns in to a block element-->
                 </li>
-                <li>
+                <li class="main-nav__item">
                     <a href="start-hosting/index.html">Start hosting</a>
                 </li>
             </ul>

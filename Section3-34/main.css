@@ -32,3 +32,43 @@ body {
     background-color: green;
     padding:8px 16px 16px;
 }
+
+/*The display property in the Dom, allows us to change the behaviour of an element from block to inline*/
+/*Example for inline elements would be anchor tags, they are rendered inline, if we have two anchor tags after each other as here for customers and we reload the page
+, we see they're rendered in the same line {{ means two anchor tag element stay in the same row, not like b-form-checkbox, staying in seperate row}}, 
+________they dont take the full entire width as block level elements_______________, on the other hand, block elements like list item, we can see the blue content
+takes full available width minus margin padding.*/
+
+/*The anchor tag only takes the width its content needs, though for inline element, we cant really set a margin top and bottom
+We can change this by display property*/
+
+
+.main-header > div {
+    display: inline-block;
+    vertical-align: middle; /* put element in the vertically middle*/
+}
+
+.main-header__brand{
+    color:darkgreen;
+    text-decoration: none; /* Can remove browser default, in this case it could remove underscore*/
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.main-nav{
+    display: inline-block;
+    text-align: right;
+    width: calc(100% - 74px); /*simple calculator*/
+    vertical-align: middle;
+}
+
+.main-nav__items{
+    margin:0;
+    padding: 0;
+    list-style: none /* this removes the bullet point*/
+}
+
+.main-nav__item{
+    display: inline-block; /* this mix the behaviour of both inline and block level elements. Like inline elements, these elements can go next to each other now but 
+    they still behave like block level elements when it comes to setting top and bottom margins, setting paddings, things that are not possible on inline elements*/
+}
