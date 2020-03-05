@@ -8,7 +8,7 @@ body {
 }
 
 #product-overview {
-    background: #ff1b68;
+    background: url("freedom.jpg"); /*图片设置背景*/
     width: 100%;
     height: 528px;
     padding: 10px;   
@@ -64,19 +64,33 @@ body {
     text-decoration: none;
 }
 
-.main-nav_item a{
+.main-nav__item a{
     text-decoration: none;
-    color: #0e4f1f
-}
-
-
+    color: #0e4f1f;
+    font-weight: bold;
+    padding: 3px 0;    
+} 
 
 /*These hover, active is pseudo class*/
-.main-nav__item a:hover {/*Mouse on button*/
+.main-nav__item a:hover, /*Mouse on button*/   /*This is grouping rules which two css can share same property*/
+.main-nav__item a:active { /*click*/
     color: white;
+    border-bottom: 5px solid white;
 }
-.main-nav__item a:active { /*Click*/
-    color:white
+
+
+.main-nav__item--cta a{
+    color:white;
+    background: red;
+    padding: 8px 16px;
+    border-radius: 16px;
+}
+
+.main-nav__item--cta a:hover,
+.main-nav__item--cta a:active{
+    color: red;
+    background-color:  white;
+    border: none;
 }
 
 /* Pseudo classes  define a style or allow us to define a style for a special state of an element, like the hover or active state.
