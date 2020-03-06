@@ -18,9 +18,17 @@ a.active{ /* this selector is written as one word, we could simply say that mean
     color: purple;
 }
 
+/*
+a:not(.active){
+    */ 
+    /* This will select all anchor tag that does not have class "active"*/ /*And here we want to select all anchor tags which directly don't have the active class*/
+    /* by leaving a white space between a and :, this will select any elements that are nested in anchor tag that do not have the active class*/
+   /* color: blue;
+}*/
+
 .main-section {
     height: 800px;
-    border: 1px solid #ccc;
+    border: 1px solid #ccc !important; /* !important overwrites specificity and all other selectors*/
     padding: 16px;
 }
 
