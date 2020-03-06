@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS Course</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <nav>
+        <a href="#intro" class="active">Intro</a>
+        <a href="#outro">Outro</a>
+    </nav>
+    <section id="intro" class="main-section highlighted"> <!-- if we got two class applied to the same element and they both happened to set a certain style on the element, then the normal
+    specificity and order rules will apply, therefore the class which is defined later in the main.css file would win. note:{{the class order in html is not important}}-->
+        <p>This is the intro section.</p>
+    </section>
+    <section id="outro" class="main-section">
+        <p>This is the outro section.</p>
+    </section>
+</body>
+
+</html>

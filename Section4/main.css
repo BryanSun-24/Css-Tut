@@ -1,0 +1,30 @@
+body {
+    font-family: sans-serif;
+}
+
+nav {
+    margin-bottom: 16px;
+    background: #fa923f;
+    padding: 8px 0;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    margin: 10px;
+}
+
+a.active{ /* this selector is written as one word, we could simply say that means this targets an element which is an anchor tag and which has the active css classes*/
+    color: purple;
+}
+
+.main-section {
+    height: 800px;
+    border: 1px solid #ccc;
+    padding: 16px;
+}
+
+.highlighted{
+    border: 2px solid red; /* because of the order, it defines later, so it wins*/
+
+}
