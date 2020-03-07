@@ -15,6 +15,12 @@
     color: white;
     font-family: 'Anton', sans-serif;
 }
+.plan__list{
+    width: 80%;
+    margin: auto;
+    text-align: center;/* To center the three elements within the div block*/
+}
+
 .plan {
     background: #d5ffdc;
     text-align: center;/* All text inside the box*/

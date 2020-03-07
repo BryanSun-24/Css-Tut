@@ -1,0 +1,93 @@
+main {
+    padding-top: 32px;
+}
+
+.background{
+    position: fixed;
+    background: url("../images/plans-background.jpg");
+    width: 100%;
+    height: 100%;
+    z-index: -1;/* This is a property to move our element along with z-axis, which is top and bottom*/ /* auto is equal to zero here*/
+    /* if we want to position an element above this package, then we could simply apply a z-index:1, bottom for z-index: -1*/
+    /* For those element which has position propery like static, z-index does not have any impact*/
+    /*by setting zero here, both packages and image have z-index:0, in this case, since image has property fixed, so it is taken out of the document flow and therefore displayed above the existing elements*/
+}
+.package {
+    width: 80%;
+    margin: 16px 0;
+    border: 4px solid #0e4f1f;
+    border-left: none;
+    position: relative;
+}
+
+.package:hover,
+.package:active {
+    box-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    border-color: #ff5454;
+    /* border-color: #ff5454 !important; */
+}
+
+.package a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    padding: 32px;
+}
+
+.package__badge{
+    position: absolute; /* for absoulte value, there are two cases, first, if none of the ancestors, so of the parent elements, has a position property applied, 
+    well then the positioning context of the element is simply the html element.
+    If we have the second case that we have any position ancestors, then the closest ancestor which has the position property applied is the positioning context for the element 就是说， abosulte element 会按照使用过position 的parent 的位置来 决定 top right left*/
+    top: 0;
+    right: 0;
+    margin: 20px;
+    font-size: 20px;
+    color: white;
+    background: #ff5454;
+    padding: 8px;
+}
+
+.package__subtitle {
+    color: #979797;
+}
+
+.package__info {
+    padding: 16px;
+    border: 1px solid #0e4f1f;
+    font-size: 20px;
+    color: #0e4f1f;
+    background: white;
+}
+
+.clearfix {
+    clear: both;
+}
+
+#plus {
+    background: rgba(213, 255, 220, 0.95);
+}
+
+#free {
+    background: rgba(234, 252, 237, 0.95);
+    float: right;
+    border-right: none;
+    border-left: 4px solid #0e4f1f;
+    text-align: right;
+}
+
+#free:hover,
+#free:active {
+    border-left-color: #ff5454;
+}
+
+#premium {
+    background: rgba(14, 79, 31, 0.95);
+}
+
+#premium .package__title {
+    color: white;
+}
+
+#premium .package__subtitle {
+    color: #bbb;
+}
