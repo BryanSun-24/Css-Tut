@@ -1,0 +1,42 @@
+html {
+    /*background: #b3b3b3;
+    padding: 15px;
+    border: 5px solid white;
+    margin: 15px;*/
+    height: 2000px;
+}
+
+body {
+    /*background: #fa923f;
+    padding: 20px;
+    border: 5px solid black;*/
+    margin: 0;
+  }
+  
+.parent {
+    background: white;
+    padding: 20px;
+    /*border: 5px solid black;*/
+    margin: 10px;
+  }
+
+.parent .country {
+    background: #fa923f;
+    color: white;
+    padding: 10px;
+    border: 5px solid black;
+    margin: 10px;
+    position: sticky; /* sticky is basically a hybrid or a combination of relative and fixed */
+    /*Right now, not all browser support sticky*/
+    top: 20px;/* As soon as we add the top property right here, the element behaves like a fixed element, as soon as we reach a certain border. */
+    /* top here means the distance between element and viewport, during the distance, it behaves like a fixed. So if top:0, this means the element 
+    will behave fixed as soon as it reaches the end of the content of its parent element.*/
+}
+  
+.parent .cities {
+    background: rgb(105, 105, 109);
+    color: white;
+    padding: 10px;
+    border: 5px solid black;
+    margin: 10px;
+}

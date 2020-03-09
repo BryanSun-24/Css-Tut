@@ -1,0 +1,137 @@
+
+
+#product-overview {
+    /*background: url("freedom.jpg");*/
+    background-image: url("freedom.jpg");
+    background-size: cover; /* cover essentially do 100%, but cover acutally finds out which part of your container,so height or width which is the important one to be aligned to your image*/
+    /*cover is a setting that always fills the entire container, it will even zoom in if your image is smaller than the container*/
+    /*However, property contain is the opposite, contain actually ensures that the full image is visible in the container*/
+    /*background-size: 100% 300px;/* first px means the width, second means the height. We can also set only one, and only one is width*/
+    background-repeat: no-repeat; /*When we set image in small px, the default behaviour is to repeat the image untill it full fill the page, so we can set property no-repeat*/
+    /*background-repeat: repeat-x;*/
+    background-position: 20px; /*The first value defines the x-axis,it defines how the left edge of the image should be positioned relative to the left edge of the surrounding container*/
+    /* Second value is now the same for the top edge of the image and the top edge of the container*/
+    /*  % value means excess space, so of the parts of the image that do not make it into the container,  whatever we set on the first value would make no difference because, image is perfectly aligned to the 
+    left edge. If we set 10% on the second value, this means 10% of excess space of the image of the top should actually go over the top. that will lead to image pushed down  */
+    
+    /*background-position: left top;*/ /*means no cropping at left and no cropping at top, equal to background-position: 0% 0%; we could also combine percentage and direction*/
+    width: 100%;
+    height: 528px;
+    padding: 10px;
+    margin-top: 43px;
+    position: relative;
+}
+
+.section-title {
+    color: #2ddf5c;
+    text-align: center;
+}
+
+#product-overview h1 {
+    color: white;
+    font-family: 'Anton', sans-serif;
+    position: absolute;
+    bottom: 5%;
+    left: 3%;
+}
+
+.plan__list {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+}
+
+.plan {
+    background: #d5ffdc;
+    text-align: center;
+    padding: 16px;
+    margin: 8px;
+    display: inline-block;
+    width: 30%;
+    vertical-align: middle;
+}
+
+.plan--highlighted {
+    background: #19b84c;
+    color: white;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.5);
+}
+
+.plan__annotation {
+    background: white;
+    color: #19b84c;
+    padding: 8px;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+}
+
+.plan__title {
+    color: #0e4f1f;
+}
+
+.plan__price {
+    color: #858585;
+}
+
+.plan--highlighted .plan__title {
+    color: white;
+}
+
+.plan--highlighted .plan__price {
+    color: #0e4f1f;
+}
+
+.plan__features {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.plan__feature {
+    margin: 8px 0;
+}
+
+#key-features {
+    background: #ff1b68;
+    margin-top: 80px;
+    padding: 16px;
+}
+
+#key-features .section-title {
+    color: white;
+    margin: 32px;
+}
+
+.key-feature__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.key-feature {
+    display: inline-block;
+    width: 30%;
+    vertical-align: top;
+}
+
+.key-feature__image {
+    background: #ffcede;
+    width: 128px;
+    height: 128px;
+    border: 2px solid #424242;
+    border-radius: 50%;
+    margin: auto;
+}
+
+.key-feature__description {
+    text-align: center;
+    font-weight: bold;
+    color: white;
+    font-size: 20px;
+}
+
+/* h1 {
+    font-family: sans-serif;
+} */
+
