@@ -2,9 +2,30 @@
     box-sizing: border-box;
 }
 
+html{
+    height: 100%;/**/
+}
+
 body {
     font-family: 'Montserrat', sans-serif;
     margin: 0;
+    height: 100%;/**/
+}
+
+.backdrop{
+    /*Usually to make a backdrop, we need position fixed, and if we use relative as position property,it will not cover the entire page, instead since it stays in the document flow,
+    it would stay on top of the  entire page*/
+    position: fixed; /*When we change this to absolute, since we dont have such a position property for the ancestors then the position absolute declaration leads to the same 
+    behaviour as position fixed, this means the percentage value refers to the viewport as the containing block, but when you scroll down, it does not stick to the viewport
+    it just takes the height and width, the percentage value is based on a viewport but it behaves like a normal absolutely positioned element*/
+    z-index:100;
+    width: 100%;
+    height: 100%;/*Apparenlty, we were able to get the width but not the height because height has to be defined in the content for working,
+     even body has height but it is not defined in the content. (Only when we have not manually define height in body and using relative for position)*/
+    background: rgba(0,0,0, 0.5);/*black with a little transparentcy*/
+    top: 0;
+    left: 0; /*these two properties are here to remove the extra margin*/
+    display: none;
 }
 
 .main-header {
