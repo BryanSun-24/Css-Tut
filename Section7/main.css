@@ -2,7 +2,7 @@
 
 #product-overview {
     /*background: url("freedom.jpg");*/
-    background-image: url("freedom.jpg");
+    background-image: url("images/freedom.jpg");
     background-size: cover; /* cover essentially do 100%, but cover acutally finds out which part of your container,so height or width which is the important one to be aligned to your image*/
     /*cover is a setting that always fills the entire container, it will even zoom in if your image is smaller than the container*/
     /*However, property contain is the opposite, contain actually ensures that the full image is visible in the container*/
@@ -15,11 +15,18 @@
     left edge. If we set 10% on the second value, this means 10% of excess space of the image of the top should actually go over the top. that will lead to image pushed down  */
     
     /*background-position: left top;*/ /*means no cropping at left and no cropping at top, equal to background-position: 0% 0%; we could also combine percentage and direction*/
+    background-origin: border-box;/* we now bascially define what the container is for our background property. by default, its not the border box and therefore we have that white space*/
+    /* the default is padding box, which means the container including the padding and content but not border*/
+    background-clip: border-box;/*works similar as background-origin 但是这个效果更强，一下子是整体*/
+    /* background-attachment: this defines whether image scrolls with the other content of the container, for local, that would be the case, for scroll, the image would stay in place and the
+    content would scroll over it, above it. for fixed, the image would not be fixed to the container but to viewport*/
     width: 100%;
     height: 528px;
     padding: 10px;
     margin-top: 43px;
+    border: 5px dashed red;/* dash in the border*/
     position: relative;
+    /*background: url("freedom.jpg") left 10% bottom 20%/cover no-repeat border-box(origin and clip) border-box(clip)  this is the short-hand*/
 }
 
 .section-title {

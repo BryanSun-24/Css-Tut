@@ -27,6 +27,16 @@ body {
     text-decoration: none;
     font-weight: bold;
     font-size: 22px;
+    height: 22px;/*by setting a height and width on container, the image will not be affected because the default behavior is if you enter an image tag and you point to an image
+    then the default height and width of the original image will be used and will be entered into your document no matter which width and height you set for the surrounding element*/
+
+    /*And the reason for above not working is because the surrounding container is an inline element itself, its just an anchor tag.*/
+    display: inline-block;/* this could help*/
+}
+
+.main-header__brand img{
+    height: 100%; /*height and width with 100% will still lead to its original height, not the full fill the container height when the surrounding container of image is inline element*/
+    /*100% will work when the surrounding container is inline-block element or block element*/
 }
 
 .main-nav {
