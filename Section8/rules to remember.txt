@@ -1,3 +1,7 @@
 First Rules:
 we understood that whenever we have an element which has position fixed declaration applied and a percentage unit, well the containing block is the view port
 Second Rules:
+
+Second Rules
+With absolute position, the percentage unit of our element with the position absolute declaration refers to the ancestor's content plus padding, so again if we have
+a percentage unit for the width, for our element, we will take the width of the ancestor's content and padding as the containing block.
