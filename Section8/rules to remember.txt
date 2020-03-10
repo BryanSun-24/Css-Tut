@@ -1,0 +1,3 @@
+First Rules:
+we understood that whenever we have an element which has position fixed declaration applied and a percentage unit, well the containing block is the view port
+Second Rules:
