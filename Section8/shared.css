@@ -4,6 +4,8 @@
 
 html{
     height: 100%;/**/
+    /*font-size: 75% when we change the font setting in browser, all other fonts which are not defined by us will be impacted, so
+     setting a font-size in html is one way to set fonts to all text in the browser, this would set 75% of the browser default font size*/
 }
 
 body {
