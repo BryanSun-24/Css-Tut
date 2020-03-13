@@ -1,0 +1,6 @@
+em appearently multpiles the font-size value, could be px. with the em to be the new value, more dynamic
+Also, em has a problem which it inherits the previous sizes and by that multiples the em with the previous em, means if for inheritance size is 20px, with 2em for previous element. the new element
+with 2em, will not follow 20px at first, instead it would do 40 * 2, to aovid this from happening, use rem
+
+rem do the following, it will always take the font-size that is set by the browser settings(initial font size of html) and multiple, but the browser isn't the best
+but also, rem could be set as margin too, example, let's say html font-size is 16px, so if we set margin as 48px, then that equals to 3rem
