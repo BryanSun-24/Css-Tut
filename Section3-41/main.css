@@ -97,10 +97,10 @@ body {
 Pseudo elements allow us to define a style of a specific part of an element.*/
 
 /* Pseudo classes are defined with a single colon and then the class name like hover or active and 
-pseudo elements are defined by adding  two colons and then the element name !!!!!! We can found a list of available pseudo classes on MDN*/
+pseudo elements are defined by adding two colons and then the element name(pseudo class) !!!!!! We can found a list of available pseudo classes on MDN*/
 
 /* pseudo example
-p::first-letter{
+p::first-letter{ // every first letter in a p
     color:red;
     font-size: 20px;
 }
