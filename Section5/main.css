@@ -102,6 +102,7 @@
     border-radius: 50%; /* This set up to 50% makes a circle*/
     height: 128px;
     margin: auto; /* auto will automatically fill the available space to the left and right equally to center the element horizontally*/
+    /*means it easily center our element, but only works for block level elements*/
 }
 
 .key-feature__description{
