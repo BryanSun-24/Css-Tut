@@ -1,5 +1,3 @@
-
-
 #product-overview {
     background: linear-gradient(to top, rgba(80, 68, 18, 0.6) 10%, transparent), url("images/freedom.jpg") red left 10% bottom 20%/cover no-repeat border-box, red; /*multiply backgrounds*/
     /* background-image: url("freedom.jpg");
