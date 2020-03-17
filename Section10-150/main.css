@@ -1,6 +1,6 @@
 #product-overview {
   background: linear-gradient(to top, rgba(80, 68, 18, 0.6) 10%, transparent),
-    url("images/freedom.jpg") left 10% bottom 70%/cover no-repeat border-box,
+    url("images/freedom.jpg") center/cover no-repeat border-box,
     #ff1b68;
   /* background-image: url("freedom.jpg");
     background-size: cover;
@@ -17,7 +17,6 @@
   position: relative;
 }
 
-
 #product-overview h1 {
   color: white;
   font-family: "Anton", sans-serif;
@@ -27,27 +26,15 @@
   font-size: 1.6rem;
 }
 
-/*media query simply tells u if this condition is met, then please apply the following code and condition*/
-@media (min-width: 40rem) /*this means as soon as the width of our device in software in css pixels is equal or larger than 40rem(when we scroll right or left of our developer tool bar we can easily see the pixel change), then media query should kick in*/
-{
-  #product-overview{
-    height: 40vh;
-    background-position: 50% 25%;
-  }
-  #product-overview h1{
-    font-size: 3rem;
-  }
-}/*In this case we can say, when we exceed 40rem, means we are no longer on a mobile-device, so we can change our font-size bigger*/
-/*From here, we can have multiple of these definitions right here, so we could add a lot of different rules basically and a lot of different limits or borders we have right here which specify different properties for different device*/
-
-@media (min-width: 60rem) {/*larger device*/
+@media (min-width: 40rem) and (orientation: portrait){ /*min-height: 60rem*/ /*portrait means the case when we spin the device, using longer side as height smaller side as width*/
+  /*portrait mode is taller than its width, landscape mode is wider than its tall*/
   #product-overview {
-    height: 50vh;
+    height: 40vh;
     background-position: 50% 25%;
   }
 
   #product-overview h1 {
-    font-size: 5rem;
+    font-size: 3rem;
   }
 }
 
@@ -56,27 +43,27 @@
   text-align: center;
 }
 
-
+/*
 .plan__list {
   width: 80%;
-  margin: auto;
   text-align: center;
 }
-
+*/
 .plan {
   background: #d5ffdc;
   text-align: center;
   padding: 1rem;
-  margin: 0.5rem;
-  display: inline-block;
-  width: 30%;
-  vertical-align: middle;
+  margin: 0.5rem 0;
+  /*display: block;/*switch from inline-block to block because we want to work on mobile version, and is better to have each plan in a row*/
+  width: 100%;
+  /*vertical-align: middle; /*used to set three sibiling-level inline-block elements in the same position of the row, it does not care whatever inside this element*/
+  /*when display: block, vertical-align would not work because all three elements are block elements and they all take full width, so they are in same line though*/
 }
 
 .plan--highlighted {
   background: #19b84c;
   color: white;
-  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.5);
+  /*box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.5);*/
 }
 
 .plan__annotation {
@@ -113,6 +100,26 @@
   margin: 0.5rem 0;
 }
 
+@media (min-width: 40rem) and (orientation: landscape){ /*and = and, or = ,*/
+  .plan__list {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+  }
+  .plan{
+    display: inline-block;
+    width: 30%;
+    vertical-align: middle;
+    min-width: 13rem ;/*this is defined because when we scroll smaller width but still bigger than 40rem, our plan box is squzzed that our recommend title exceeds the box-size, 
+    so we want to set min-width to restrict the scroll effect*/
+    max-width: 25rem; /*same reason for min-width*/
+  }
+  .plan--highlighted {
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.5);
+  }
+}
+
+
 #key-features {
   background: #ff1b68;
   margin-top: 5rem;
@@ -131,11 +138,11 @@
   text-align: center;
 }
 
-.key-feature {
-  display: inline-block;
-  width: 30%;
-  vertical-align: top;
-}
+/*.key-feature {
+  /*display: inline-block;*/
+  /*width: 30%;*/
+  /*vertical-align: top;*/
+/*}*/
 
 .key-feature__image {
   background: #ffcede;
@@ -152,6 +159,15 @@
   font-weight: bold;
   color: white;
   font-size: 1.2rem;
+}
+
+@media(min-width: 40rem){
+  .key-feature {
+    display: inline-block;
+    width: 30%;
+    max-width: 25rem;
+    vertical-align: top;
+  }
 }
 
 /* h1 {
