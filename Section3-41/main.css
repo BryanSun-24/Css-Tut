@@ -72,8 +72,10 @@ body {
 } 
 
 /*These hover, active is pseudo class*/
-.main-nav__item a:hover, /*Mouse on button*/   /*This is grouping rules which two css can share same property*/
-.main-nav__item a:active { /*click*/
+.main-nav__item a:hover, /*Mouse move over button*/   /*This is grouping rules which two css can share same property*/
+.main-nav__item a:active { /*click before release*/
+    /* there are also a:link means for <a> which has not been clicked,
+    and a:visited means for <a> which has already clicked and visteds*/
     color: white;
     border-bottom: 5px solid white;
 }

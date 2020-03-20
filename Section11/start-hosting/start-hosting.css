@@ -12,5 +12,63 @@ main{
 .signup-form select{
     display: block;
     margin-top: 1rem;
-    width: 100%;
+    width: 100%;/* it is block level element and it takes full width, but the input box does not and that is default setting, to set inputbox full width, we need to manually do it*/
+}               
+
+/*.signup-form input[type="checkbox"]*/
+.signup-form input[id*="terms"],
+.signup-form input[id*="terms"] + label {
+    display: inline-block;
+    width: auto;
+    vertical-align: bottom;
+}
+
+.signup-form input:not([type="checkbox"]),
+.signup-form select{
+    border: 1px solid #ccc;
+    padding: 0.2rem 0.5rem;
+    font: inherit;/*not using browser default*/
+}
+
+.signup-form input:focus, /*focus works when we click on the inputbox, it is ready to receive typing, the input textbox is focus*/
+.signup-form select:focus{
+    outline: none;
+    background: #d8f3df;
+    border-color: green;
+}
+
+.signup-form input[type="checkbox"]{
+    border: 1px solid #ccc;
+    background: white;
+    width: 1rem;
+    height: 1rem;
+    -webkit-appearance: none;/*browser default checkbox style, so we want to set it none*/
+    -moz-appearance: none;
+    appearance: none;/*help browser better understand we do not want default*//*Since we set default setting to be none, we need to manually set check property, which is pseudo class checked*/
+}
+
+.signup-form input[type="checkbox"]:checked{
+    background: #2ddf5c;
+    border: #0e4f1f;
+}
+
+
+.signup-form input.invalid， 
+.signup-form select.invalid, /*form has invalid property in default, so we dont really need to define invalid property*/
+.signup-form :invalid{/* selector can also select valid element*/
+    border-color: red !important;
+    background: #faacac;
+}
+
+
+.signup-form button[type="submit"]{
+    display: block;
+    margin-top: 1rem;
+}
+
+@media (min-width: 40rem){
+    .signup-form{
+        margin: auto;
+        width: 25rem;
+    }
 }
