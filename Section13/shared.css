@@ -1,11 +1,13 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,400,900');
+@import url('https://fonts.googleapis.com/css?family=Anton');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
+
 * {
   box-sizing: border-box;
 }
 
 body {
-  font-family: "Montserrat", sans-serif; /*first value is the font family that we want to address, quotation mark is not necessary now, but we have to add it though when our font family consists of multiple seperate names*/
-  /*sans-serif is a generic family and this already shows you the general pattern how you should write this declaration*/
-  /*if browser can not find Montserrat, it will use sans-serif defined in the browser setting */
+  font-family: "Montserrat", sans-serif;
   margin: 0;
 }
 

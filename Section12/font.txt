@@ -1,0 +1,7 @@
+the default selection for browser is the standard font we applied, means that we didnot specify any kind of font family in our css
+We can define our Generic family in css, and select generic family in browser setting// this is our fallback
+third option is define font-family in css   
+    in this option, it has three options
+        1. the font family we specify is saved locally on user's computer
+        2. we have web fonts (which is goggle font as example)
+        3. retrieved from server
