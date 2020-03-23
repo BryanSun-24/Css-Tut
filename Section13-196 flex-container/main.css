@@ -1,0 +1,102 @@
+* {
+    box-sizing: border-box;
+    font-size: 1.5rem;
+}
+
+html {
+    background: #b3b3b3;
+    padding: 5px;
+}
+
+body {
+    background: #b3b3b3;
+    padding: 5px;
+    margin: 0;
+  }
+  
+.flex-container {
+    background: white;
+    padding: 10px;
+    border: 5px solid black;
+    display: flex;
+    /*display: inline-flex; */
+    flex-direction: row;/*row is default behaviour our main axis starts from top left corner to the right, if we scroll our developer tol, it simply wraps along the cross axis, from top to bottom*/
+    /*flex-direction: row-reverse; now starts from top right corner to left, and from top to bottom*/
+    /*flex-direction: column; it will display like block level element for each item, our main axis starts from top to bottom, and cross axis from left to right*/
+    /*flex-direction: column-reverse; items displayed from bottom to top like block elements, main axis is from bottom to top. cross axis from left to right*/
+    flex-wrap: wrap;/*nowrap is default behaviour*//*element will behaviour like block element, it would not jump to next line, it will just vanish*/
+    /*flex-wrap: wrap;   as soon as the element would have to reduce its width below the defined value, the element is wrapped and jumps into the second row
+    the second interesting thing is the height, when using nowrap, it simply adapted to the height we had defined right here, but after adding new line, it simply uses the height it needs to display the content*/
+    /*flex-wrap: wrap-reverse; now item-1 is at bottom, item-6 is at top, the order is reversed, and when they are in one row, the element displayed from bottom to top, there will be white space at top of the element if element is shorter than container height */
+    /*flex-flow: row wrap; short hand of flex-direction and flex-wrap*/
+
+    align-items: stretch;/*default behaviour*/
+    /*align-items: center; it simply centered our flex items along the cross axis*/
+    /*align-items: flex-start; elements are centered at the beginning*/
+    /*align-items: flex-end; items centerd at the end of cross axis*/
+    /*align-items: baseline; barely used, will find out when uncomment this code*/
+
+    height: 1300px;
+
+    justify-content: center/* elements is centered flex items along the main axis*/;
+    /*same as align-items, justify-content has same properties as align-itmes;*/
+
+    /*justify content refers to the main axis and the main axis depends on the flex direction and the align itmes refers to the cross axis*/
+    align-content: center;/*align-content allows us to align our items along the cross axis*//* it will only show when we have second line of elements, the second line of flex items和第一行紧挨着*/
+    /*align-content: space-between; opposite as align-content: center, the second line of this one starts from bottom*/
+}
+
+.item-1 {
+    background: #ff7300;
+    color: white;
+    padding: 10px;
+    border: 5px solid black;
+    margin: 10px;
+}
+
+.item-2 {
+    background: #ff9640;
+    color: white;
+    padding: 10px;
+    border: 5px solid black;
+    margin: 10px;
+    width: 250px;
+    font-size: 1.8rem;
+}
+
+.item-3 {
+    background: #ff9640;
+    color: white;
+    padding: 10px;
+    border: 5px solid black;
+    margin: 10px;
+    height: 250px;
+}
+
+.item-4 {
+    background: #f5c096;
+    color: white;
+    padding: 10px;
+    border: 5px solid black;
+    margin: 10px;
+    width: 300px;
+    height: 300px;
+}
+
+.item-5 {
+    background: #d3c0b1;
+    color: white;
+    padding: 10px;
+    border: 5px solid black;
+    margin: 10px;
+    width: 350px;
+}
+
+.item-6 {
+    background: #d3c0b1;
+    color: white;
+    padding: 10px;
+    border: 5px solid black;
+    margin: 10px;
+    width: 350px;
+}

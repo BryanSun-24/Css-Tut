@@ -1,0 +1,91 @@
+* {
+    box-sizing: border-box;
+    font-size: 1.5rem;
+}
+
+html {
+    background: #b3b3b3;
+    padding: 5px;
+}
+
+body {
+    background: #b3b3b3;
+    padding: 5px;
+    margin: 0;
+  }
+  
+.flex-container {
+    background: white;
+    padding: 10px;
+    border: 5px solid black;
+    height: 1300px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    /*flex-flow: row wrap;*/
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+.item-1 {
+    background: #ff7300;
+    color: white;
+    padding: 10px;
+    border: 5px solid black;
+    margin: 10px;
+}
+
+.item-2 {
+    background: #ff9640;
+    color: white;
+    padding: 10px;
+    border: 5px solid black;
+    margin: 10px;
+    width: 250px;
+    font-size: 1.8rem;
+}
+
+.item-3 {
+    background: #ff9640;
+    color: white;
+    padding: 10px;
+    border: 5px solid black;
+    margin: 10px;
+    height: 250px;
+    /*align-self: flex-start;/* sign items is positioned along the cross axis*/ /* align-items referred to all elements 
+    */
+}
+
+.item-4 {
+    background: #f5c096;
+    color: white;
+    padding: 10px;
+    border: 5px solid black;
+    margin: 10px;
+    width: 300px;
+    height: 300px;
+    /*order: 1;/*this is order property, default is 0. it allows us to change the order of the elements that the elements initially have based on the code in HTML and by adding numbers, so greater value will be positioned at the end of the main axis*/
+}
+
+.item-5 {
+    background: #d3c0b1;
+    color: white;
+    padding: 10px;
+    border: 5px solid black;
+    margin: 10px;
+    width: 350px;
+    /*flex-grow: 1;/*default is 0*/ /*the flex grow factor*/ /*1/4 remaining space*/
+    /*flex-shrink: 1;/*default is 1*/
+    flex-basis: 300px;/* this simply defines the size of an element, and now it's really important, depending on the main axis,*//*default is auto*/
+}
+
+.item-6 {
+    background: #d3c0b1;
+    color: white;
+    padding: 10px;
+    border: 5px solid black;
+    margin: 10px;
+    width: 350px;
+    /*order: -2;*/
+    /*flex-grow: 3; /*3/4 remaining space*/
+}
