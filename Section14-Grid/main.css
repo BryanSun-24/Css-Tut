@@ -1,21 +1,97 @@
 .container {
     margin: 20px;
+    height: 800px;
     display: grid;/*the default behaviour of grid is it will create only one column and as many as rows as we have child elements*/
     /*and only direct children are part of the grid*/
+    grid-template-columns: 200px 150px 20% 1fr;/*this allows us to overwrite of only having one column and to add multiple columns to the grid*/
+    /* the value been set is the width of the columns, each one points to one column, if we have 3 values defined and 4 items in html, then the fourth item will jump to the second row automatically*/
+    /* the fourth value with one fraction will split up the remaining space which is 100% - 20% - 200pixels - 150 pixels*/
+    /*if it has more than two fractions, it will split the remaining space between all columns with fraction and the number indicates the relation*/
+    /*200px 2fr 20% 1fr; (100% - 20% - 200px)/3, *2 and *1*/
+    grid-template-rows: 5rem auto; /*rows height, the order refers to the number of rows*/
+    /* if we want to use all the available remaining space, we can set property "auto", but it will only as high as it needs to fit the content in */
+    /*height: 600px; auto will fill all height up if we set height*/
+    
+    /*grid-template-columns: repeat(4, 25%);/*first value is how often it repeats, the second value is the width*/
+
+    /*grid-template-rows: 5rem minmax(10px, 200px);*/ /*minmax() first value is min-height, second value is max-height, it works when we manually setup height property in container*/
+
+    /*to set a name of row or column, we can do this:
+    grid-template-rows: [row-1-start] 5rem [row-1-end row-2-start] minmax(10px, 200px)[row-2-end row-3-start] auto [row-3-end] (last name is for the column line at very right end)
+    if we want to name line number one, we have to add the name in front of the value for the first row
+    of course we can set multiple names for one row*/
+
+    
+    column-gap: 20px; /*this will create gap between each columns, replace with margin, if there is case where one item take up more columns, it overlaps the gaps too*/
+    row-gap: 10px; 
+    /*gap: grid-row-gap grid-column-gap */
+
+    grid-template-areas: "header header header header"
+                            ". . main main"
+                            "footer footer footer footer"; /*by doing this, we can easily assing cells to elements by just using grid-area: footer; or grid-area:main; for elements, they will take up the defined namedspaces*/
+
+    justify-items: stretch;/*center: items is positioned in their row and it is centered in the center of its row, it could be on the gap*/
+    /*it positions the elements in their gird tracks*/
+    /*stretch is default, and stretch will take full space of items' cell*/
+    /*this property is for all items, not for individual*/
+    align-items: stretch;/*property for column*/
+
+
+    
+    /*justify-content: center;/*when we are having remaining space in the content, this is the property to position the entire content on the x-axis*/
+    /*start center end stretch*/
+    /*align-content: center;/*position entire content along y-axis*/
+    /*only set these in container*/
+    /*for individual element, using justify-self and align-self*/
+}
+
+@media (max-width: 40rem){
+    .container{
+        grid-template-areas: "header header header header"
+        "main main main main"
+        "side side side side"
+        "footer footer footer footer"; 
+    } /*good thing for grid, we can use media query to reset template-area*/
 }
 
 .el1 {
-    background: rgba(255, 154, 72, 0.5);
+    background: rgba(255, 154, 72, 0.5); 
 }
 
 .el2 {
     background: rgba(255, 0, 0, 0.5);
+    grid-column-start: 1;
+    grid-column-end: -1;/*this will lead to is simply that it starts counting from line the end of the grid*/
+    /*in this case, element 2 will jump into a new line because it couldn't take that line as it was already partly taken by element three*/
+
+    /*shorthand
+    gird-column: 1 / -1; this simply is the shorthand of grid-column-start: 1; and grid-column-end: -1 ## btw, '/' is needed;
+    grid-area: grid-row-start / grid-column-start /  grid-row-end / grid-column-end;*/
+    
+
+    grid-row-start: 2; /*can be changed to row-2-start without bracket*/
+    grid-row-end: span 1; 
+    /*by doing thses two properties, element2 and element3 will overlap, the grid will try to avoid overlappping if you don't specificly set it*/
+    /*the DOM order will decide which one is on top, element 3 comes after element 2 so element 3 is on top, but we can set order by z-index*/
+    z-index: 10;/*default is 0*/
+
+    justify-self: center;/*this is used to position item itseflf along x-axis*/
+    align-self: center;/*same but along y-axis*/
+    /*these properties are used to position individual item*/
 }
 
 .el3 {
+    /*margin: 10px; /*line wouldnot change. just the element insdie container*/
     background: rgba(0, 128, 0, 0.5);
+    grid-column-start: 2; /*this tells element 3 should start at column */
+    grid-column-end: 5; /*and ends at column 5*/ /*this case, we are setting element3 to take up 2 cells*/
+    /*grid-column-end: span 2; it simply tells to end after it occupies two cells*/
+    grid-row-start: 1;/*starts from the first row(first line)*/
+    grid-row-end: 3;
 }
 
 .el4 {
     background: rgba(0, 4, 255, 0.5);
+    /*grid-area: header;  by doing this element4 will take up all spaces defined of header cells*/
 }
+

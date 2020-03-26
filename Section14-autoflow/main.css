@@ -1,0 +1,46 @@
+.container {
+    margin: 20px;
+    display: grid;
+    /*grid-template-columns: repeat(2, 15rem);*/
+    grid-template-columns: repeat(auto-fill, 10rem);/*what auto-fill will do is it will ensure that it fills the current row with as many items as possible then it will wrap and enter a new row bascially*/
+    /*it could chhange based on dev tool scroll */
+
+    /*grid-template-columns: repeat(auto-fit, 10rem);*//*auto-fit is doing similar function as auto-fill, just when we dont have enough items in a row, auto-fit will automatelicaly center our elements*/
+
+    /*grid-template-rows*/
+    justify-content: center;
+    grid-gap: 1.5rem;
+    grid-auto-rows: 12rem;/*this allows us to create the style of automatically generated rows,add the size of newly created rows. auto is default,
+    by setting value, it indicates the height*/
+    grid-auto-columns: auto;/*same as rows, this define the size(width) of newly created column*/
+    grid-auto-flow: column;/*row is default, this allows us to set whether row or column to be created when new items is pushed to next row or column
+    if we set column, grid would not add new items in new row, instead it will add new content to the right, new column*/
+    /*grid-auto-flow: row dense; what dense will do is take up space which would be initially empty, related with span*/
+}
+
+.quote {
+  border: 1px solid #fa923f;
+  background: #ffbd87;
+  font-family: sans-serif;
+  padding: 1rem;
+  border-radius: 5px;
+}
+
+.quote:nth-of-type(2){/*select the second element with the quote class*/
+  grid-column: span 2;/*it will leave a cell space empty first*/
+  /*when doing span, the DOM order is respected here, as we just increase the quote size to 2 columns*/
+  /*unless we were to position element explicitly with grid row and column(row + column), if we were doing this, then the element after it would actually take the empty space*/
+  /*but if we only increase this to span more than one cell, then the cell which would have normally gotten will stay empty*/
+  /*this behaviour can be overwrtie by grid-auto-flow: row dense;*/
+  /*This part of knowledge is good to matain the element order*/
+}
+
+.quote--featured {
+  border: #ff4213;
+  background: #ff9f87;
+  grid-column: span 2;
+}
+
+/*explicit and implicit, explicit grid is always the part you define with grid template columns and rows and sometimes, you define entire grid like in our project where you define header, main, footer, that 
+was everything we have on the page, but sometimes you only define parts of the grid or nothing at all and the parts you didnot define explictly are then managed with the implicit grid which you can
+in turn control with the grid-auto settings*/
