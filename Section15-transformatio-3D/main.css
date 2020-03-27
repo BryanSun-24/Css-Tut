@@ -1,0 +1,46 @@
+.container {
+    position: relative;
+    margin: 150px auto;
+    border: 1px solid black;
+    width: 200px;
+    height: 200px;
+    perspective: 1000px;/*to set up perspective property but not perspective function, it needs to be applied to the parent element,
+    the advantage is that you can have the same perspective for all child elements, but if you use perspective function, for each item where you applied
+    has its own perspective*/
+    perspective-origin: right;/*define the angel of your perspective*/
+    /*perspective-origin: 500px;*/
+    /*transform:rotateY(90deg); it will rotate our container and the element inside will also have effect
+    however, since this is 90deg, we would expect not to see the container, but to see the red and blue box. but that was sterotype,
+    actually everything is hidden, and that's because they have their own 3D space inside of the container, the default behaviour however flattens this 3D space
+    and you can change this behaviour with another property transform-style*/
+
+    /*transform-style: flat; default is flat which means the container rotates and the elements move with the container, but they're actually in a flat 3D space in there
+    so the overall container is seen as one flat object. However, we can change it wo preserve-3D*/
+
+    /*transform-style: preserve-3d; with this value, the 3D position of the child element is preserved, after setting this we can see red box*/
+}
+
+.box1 {
+    position: absolute;
+    background: red;
+    width: 100%;
+    height: 100%;
+    transform:perspective(0)/*perspective where we see the items*/ rotateX(80deg)/* this make item rotates towards you*/ rotateY(30deg);/*and is rotateing towards you along z-axis*/
+    color: white;
+    font-family: sans-serif;
+    text-align: center;
+    z-index: 1;/*we can see blue box is still behind red box, because we are flipping around*/
+    backface-visibility: hidden;/*default is visible, setting this means if you 're fliping and you 're seeing your back, please dont show anything*/
+}
+
+.box2 {
+    position: absolute;
+    background: blue;
+    width: 100%;
+    height: 100%;
+    transform: translateX(1rem) translateZ(10rem);/*translateZ(positive) will become bigger because it moves towards us, (negative)will become smaller because it moves away from us 
+    transformY(postive) will actually move down but (negative) will move up*/
+    color: white;
+    font-family: sans-serif;
+    text-align: center;
+}

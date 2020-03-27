@@ -36,6 +36,7 @@ main {
     box-shadow: 2px 2px 4px rgba(0,0,0,0.5);
     border-color: #ff5454;
     /* border-color: #ff5454 !important; */
+    animation: push-up 1s ease-out forwards;
 }
 
 .package a {
@@ -54,9 +55,8 @@ main {
     color: white;
     background: #ff5454;
     padding: 0.5rem;
-    transform: rotateZ(45deg)/*it rotates around the center of this element by 45deg*/ translateX(3.5rem) /*it allows you to move element on the x-axis,notice the move of x-axis is moving through the center of the box, so if this element has been rotated, its move x-axis is not normal x-axis */ translateY(-1rem);
-    transform-origin: center;/*this define the rotate reference, center means rotating around the center of the box,. Top left means rotating around the top left corner
-    we could also use number. 0 0 => Top left, 50% 50% => center*/
+    transform: rotate(45deg) translate(3.5rem, -1rem);
+    transform-origin: center;
     width: 12rem;
     text-align: center;
 }
@@ -127,5 +127,19 @@ main {
     #free:hover,
     #free:active {
       border-right-color: #ff5454;
+    }
+}
+
+@keyframes push-up {
+    0% {
+        transform: translateY(0);
+    }
+
+    33% {
+        transform: translateY(-1.5rem);
+    }
+    
+    100% {
+        transform: translateY(-1rem);
     }
 }
