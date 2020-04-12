@@ -18,8 +18,11 @@ body {
     background: white;
     padding: 10px;
     border: 5px solid black;
-    display: flex;
-    /*display: inline-flex; */
+    display: flex; /* i think we we set up flex property to the container, the children of it behaves like inline-block element if you set them width specifily they will have the width as you defined,
+    but if you dont set width, they will just be like inline-block, only have width that fits the text, and when we set up flex-direction to column, all children elements behaves like block level elements,
+    but still, it does not actually take whole width of the row like block level elements, instead it displays like block level elements, each one takes a row, but itsa width still behaves like inline-element,
+    if we dont explicitly set up width, it still only takes enough width to fit the text, if direction is row, children would display like each chidren is taking a entire column, but it still takes enough wdith and height if we dot set them explictily */
+    /*display: inline-flex; */ /*difference between display flex is flex-inline makes the container a inline level container, but flex is a block level container*/
     flex-direction: row;/*row is default behaviour our main axis starts from top left corner to the right, if we scroll our developer tol, it simply wraps along the cross axis, from top to bottom*/
     /*flex-direction: row-reverse; now starts from top right corner to left, and from top to bottom*/
     /*flex-direction: column; it will display like block level element for each item, our main axis starts from top to bottom, and cross axis from left to right*/
