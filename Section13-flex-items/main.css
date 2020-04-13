@@ -23,7 +23,8 @@ body {
     flex-direction: row;
     flex-wrap: nowrap;
     /*flex-flow: row wrap;*/
-    align-items: center;
+    align-items: start; /*it could also be align-items:stretch; which is default setting, By doing this, flex items will behave like block level elements and it will take full height of the container if flex direction is row, just like block level elememnt*/
+    /*but right here, since we setup align-items:start. then it would not take full height of the container because we want items all stay on the top, so it only takes as much height as it needs*/
     justify-content: flex-start;
   }
 

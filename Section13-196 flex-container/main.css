@@ -18,10 +18,12 @@ body {
     background: white;
     padding: 10px;
     border: 5px solid black;
-    display: flex; /* i think we we set up flex property to the container, the children of it behaves like inline-block element if you set them width specifily they will have the width as you defined,
-    but if you dont set width, they will just be like inline-block, only have width that fits the text, and when we set up flex-direction to column, all children elements behaves like block level elements,
-    but still, it does not actually take whole width of the row like block level elements, instead it displays like block level elements, each one takes a row, but itsa width still behaves like inline-element,
-    if we dont explicitly set up width, it still only takes enough width to fit the text, if direction is row, children would display like each chidren is taking a entire column, but it still takes enough wdith and height if we dot set them explictily */
+    display: flex; /*  the children of container behaves like block element if you set them width specifily they will have the width as you defined,
+    when we set up property, align-items: start/center/end. Since it is telling we want out items to be positoned in the start or center or end. Then they dont take full width or full height of the container
+    only have width that fits the text, if we dont explicitly set up width, it still only takes enough width to fit the text, if direction is row, children would display like each chidren is taking a entire column, but it still takes enough wdith and height if we dot set them explictily 
+    
+    But if we do not explicityly set align-items, or set to default which is align-items: stretch, then items will automatecially take full width or height of the container
+    */
     /*display: inline-flex; */ /*difference between display flex is flex-inline makes the container a inline level container, but flex is a block level container*/
     flex-direction: row;/*row is default behaviour our main axis starts from top left corner to the right, if we scroll our developer tol, it simply wraps along the cross axis, from top to bottom*/
     /*flex-direction: row-reverse; now starts from top right corner to left, and from top to bottom*/
@@ -33,7 +35,7 @@ body {
     /*flex-wrap: wrap-reverse; now item-1 is at bottom, item-6 is at top, the order is reversed, and when they are in one row, the element displayed from bottom to top, there will be white space at top of the element if element is shorter than container height */
     /*flex-flow: row wrap; short hand of flex-direction and flex-wrap*/
 
-    align-items: stretch;/*default behaviour*/
+    align-items: stretch;/*default behaviour*/ /* flex items will automatecially takes full width or height of the flex container */
     /*align-items: center; it simply centered our flex items along the cross axis*/
     /*align-items: flex-start; elements are centered at the beginning*/
     /*align-items: flex-end; items centerd at the end of cross axis*/
